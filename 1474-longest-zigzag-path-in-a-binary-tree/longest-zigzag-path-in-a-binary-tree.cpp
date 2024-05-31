@@ -18,17 +18,13 @@ int ans=0;
         ans=max(m,ans);
         if(flag==0)
         {
-            
-                
                 helper(root->right,m+1,1);
                 helper(root->left,1,0);
-            
+
         }
         else
         {
-           
-                
-                helper(root->left,m+1,0);
+               helper(root->left,m+1,0);
                 helper(root->right,1,1);
             
 
