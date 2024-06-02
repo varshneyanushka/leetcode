@@ -5,28 +5,20 @@ public:
         map<int,int> map;
         for(int num :arr)
         {
-            if(map[num]==NULL)
-            {
-                map[num]=1;
-            }
-            else
-            {
+            
                 map[num]++;
-            }
+            
         }
 
-        for (auto i = map.begin(); i != map.end(); i++) 
-        {
-            for (auto j = map.begin(); j != map.end(); j++) 
+       unordered_set<int> s;
+            for(auto p:map)
             {
-                if( i->second==j->second && i!=j)
-                {
-                    return false;
-                }
+                s.insert(p.second);
             }
-        }
-
-        
+            if(s.size()!=map.size())
+            {
+                return false;
+            }
 
         return true;
 
