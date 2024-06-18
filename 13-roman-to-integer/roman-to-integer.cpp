@@ -12,27 +12,16 @@ public:
     };
     int n =s.length();
     int ans=0;
-    char pop='I';
-    for(int i=n-1;i>=0;i--)
-    {
-        if((pop=='V'||pop=='X') && s[i]=='I')
-        {
-            ans=ans-map[s[i]];
+    for(int i = 0; i < n; i++){
+            if(map[s[i]] < map[s[i+1]]){
+                ans -= map[s[i]];
+            }
+            else{
+                ans += map[s[i]];
+            }
         }
-        else if((pop=='L'||pop=='C') && s[i]=='X')
-        {
-            ans=ans-map[s[i]];
-        }
-        else if((pop=='D'||pop=='M') && s[i]=='C')
-        {
-            ans=ans-map[s[i]];
-        }
-        else{
-            ans=ans+map[s[i]];
-        }
-        pop=s[i];
+    
 
-    }
         return ans;
         
     }
