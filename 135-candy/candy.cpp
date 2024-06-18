@@ -1,15 +1,15 @@
 class Solution {
 public:
-    int candy(vector<int>& ratings) {
-        int n=ratings.size();
+    int candy(vector<int> a) {
+        int n=a.size();
         vector<int> dp(n,1);
         for(int i=0;i<n-1;i++)
         {
-            if(ratings[i]<ratings[i+1])
+            if(a[i]<a[i+1])
             {
                 dp[i+1]=dp[i]+1;
             }
-            else if(ratings[i]>ratings[i+1] && dp[i]<=dp[i+1])
+            else if(a[i]>a[i+1] && dp[i]<=dp[i+1])
             {
                 dp[i]++;
             }
@@ -19,11 +19,11 @@ public:
       
         for(int i=n-1;i>0;i--)
         {
-            if(dp[i]==dp[i-1] && ratings[i]!=ratings[i-1])
+            if(dp[i]==dp[i-1] && a[i]!=a[i-1])
             {
                 dp[i-1]++;
             }
-            if(ratings[i-1]>ratings[i] && dp[i-1]<dp[i])
+            if(a[i-1]>a[i] && dp[i-1]<dp[i])
             {
                 dp[i-1]=dp[i]+1;
             }
