@@ -13,10 +13,10 @@ public:
             {
                 dp[i]++;
             }
-            cout<<dp[i];
+            
             
         }
-        cout<<endl;
+      
         for(int i=n-1;i>0;i--)
         {
             if(dp[i]==dp[i-1] && a[i]!=a[i-1])
@@ -31,7 +31,7 @@ public:
         int sum=0;
         for(int i=0;i<n;i++)
         {
-            cout<<dp[i];
+           
             sum=sum+dp[i];
         }
 
