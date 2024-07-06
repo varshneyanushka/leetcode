@@ -12,7 +12,7 @@
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
-    return helper(root,root);
+    return helper(root->left,root->right);
     }
     bool helper(TreeNode* t1,TreeNode* t2)
     {
