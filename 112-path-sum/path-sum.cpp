@@ -12,28 +12,20 @@
 class Solution {
 public:
     bool hasPathSum(TreeNode* root, int targetSum) {
-        int sum=0;
-        bool ans=false;
-        dfs(root,targetSum,0,ans);
-        return ans;
-        
+        return dfs(root, targetSum, 0);
     }
-    void dfs(TreeNode* root,int targetSum,int sum,bool &ans)
-    {
-        
-        if(!root){return;}
-        
-        sum+=root->val;
-        if(sum==targetSum &&!root->right && !root->left){
-            ans=true;
-            return;
-        }
     
+    bool dfs(TreeNode* root, int targetSum, int sum) {
+        if (!root) return false;
         
-        dfs(root->left,targetSum,sum,ans);
-        dfs(root->right,targetSum,sum,ans);
-        return ;
+        sum += root->val;
+
+        // If it's a leaf node, check if the path sum equals the targetSum
+        if (!root->left && !root->right) {
+            return sum == targetSum;
+        }
+        
+        // Recur for the left and right subtrees
+        return dfs(root->left, targetSum, sum) || dfs(root->right, targetSum, sum);
     }
-
-
 };
