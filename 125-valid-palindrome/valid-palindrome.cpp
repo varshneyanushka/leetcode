@@ -1,8 +1,9 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        if(s.empty()){return true;}
+       
         int n=s.length();
+         if(s.empty() || n==1 ){return true;}
         string news;
         for(int i=0;i<n;i++)
         {
@@ -15,7 +16,7 @@ public:
         }
         int m=news.size();
         
-        cout<<news;
+       
 
         int i=0;int j=m-1;
         while(i<j)
