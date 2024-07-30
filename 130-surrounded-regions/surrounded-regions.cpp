@@ -9,7 +9,7 @@ public:
         int rows = board.size();
         int cols = board[0].size();
 
-        // Push 'O's from the first and last row into the queue
+        
         for (int i = 0; i < cols; i++) {
             if (board[0][i] == 'O') {
                 q.push({0, i});
@@ -21,7 +21,7 @@ public:
             }
         }
 
-        // Push 'O's from the first and last column into the queue
+        
         for (int i = 0; i < rows; i++) {
             if (board[i][0] == 'O') {
                 q.push({i, 0});
