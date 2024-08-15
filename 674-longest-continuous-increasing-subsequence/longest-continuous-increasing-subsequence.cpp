@@ -3,7 +3,7 @@ public:
     int findLengthOfLCIS(vector<int>& nums) {
         int m=1;
         int j=1;
-        vector<int> ans;
+        
         int n=nums.size();
         for(int i=0;i<n;i++)
         {
